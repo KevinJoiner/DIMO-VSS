@@ -1,9 +1,12 @@
-# VEHICLE SIGNAL SPECIFICATION
+# DIMO VSS
 
 
 [![License](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
-[![Build Status](https://github.com/COVESA/vehicle_signal_specification/actions/workflows/buildcheck.yml/badge.svg)](https://github.com/COVESA/vehicle_signal_specification/actions/workflows/buildcheck.yml?query=branch%3Amaster)
+[![Build Status](https://github.com/KevinJoiner/DIMO-VSS/actions/workflows/buildcheck.yml/badge.svg)](https://github.com/KevinJoiner/DIMO-VSS/actions/workflows/buildcheck.yml?query=branch%3Amaster)
 
+Forked from: https://github.com/COVESA/vehicle_signal_specification
+This Repo Contains standard specifications with DIMO overlays.
+## VEHICLE SIGNAL SPECIFICATION
 The overall goal of the Vehicle Signal Specification (VSS) is to create a common understanding of vehicle signals in order to reach a “common language” independent of the protocol or serialisation format.
 
 Please find the official documentation at: [Vehicle Signal Specification](https://covesa.github.io/vehicle_signal_specification/)

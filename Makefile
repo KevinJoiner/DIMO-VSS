@@ -19,32 +19,34 @@ mandatory_targets: clean json json-noexpand franca yaml binary csv graphql ddsid
 optional_targets: clean protobuf ttl
 
 TOOLSDIR?=./vss-tools
+VENV_NAME?=vss-tools
+VENV_PATH?=.venv/${VENV_NAME}
 
 json:
-	${TOOLSDIR}/vspec2json.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).json
+	${TOOLSDIR}/vspec2json.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).json
 
 json-noexpand:
-	${TOOLSDIR}/vspec2json.py -I ./spec --uuid -u ./spec/units.yaml --no-expand ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_noexpand.json
+	${TOOLSDIR}/vspec2json.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml --no-expand ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_noexpand.json
 
 jsonschema:
-	${TOOLSDIR}/vspec2jsonschema.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).jsonschema
+	${TOOLSDIR}/vspec2jsonschema.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).jsonschema
 
 franca:
-	${TOOLSDIR}/vspec2franca.py -v $$(cat VERSION)  -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).fidl
+	${TOOLSDIR}/vspec2franca.py -v $$(cat VERSION)  -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).fidl
 
 yaml:
-	${TOOLSDIR}/vspec2yaml.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).yaml
+	${TOOLSDIR}/vspec2yaml.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).yaml
 
 csv:
-	${TOOLSDIR}/vspec2csv.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).csv
+	${TOOLSDIR}/vspec2csv.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).csv
 
 ddsidl:
-	${TOOLSDIR}/vspec2ddsidl.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).idl
+	${TOOLSDIR}/vspec2ddsidl.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).idl
 
 # Verifies that supported overlay combinations are syntactically correct.
 overlays:
-	${TOOLSDIR}/vspec2json.py -I ./spec --uuid -u ./spec/units.yaml -o overlays/profiles/motorbike.vspec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_motorbike.json
-	${TOOLSDIR}/vspec2json.py -I ./spec --uuid -u ./spec/units.yaml -o overlays/extensions/dual_wiper_systems.vspec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_dualwiper.json
+	${TOOLSDIR}/vspec2json.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml -o overlays/profiles/motorbike.vspec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_motorbike.json
+	${TOOLSDIR}/vspec2json.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml -o overlays/extensions/dual_wiper_systems.vspec ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION)_dualwiper.json
 
 tests:
 	PYTHONPATH=${TOOLSDIR} pytest
@@ -54,16 +56,30 @@ binary:
 	${TOOLSDIR}/vspec2binary.py --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).binary
 
 protobuf:
-	${TOOLSDIR}/vspec2protobuf.py  -I ./spec -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).proto
+	${TOOLSDIR}/vspec2protobuf.py  -I ./spec -o overlays/DIMO/dimo.vspec -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).proto
 
 graphql:
-	${TOOLSDIR}/vspec2graphql.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).graphql.ts
+	${TOOLSDIR}/vspec2graphql.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).graphql.ts
 
 ttl:
-	${TOOLSDIR}/contrib/vspec2ttl/vspec2ttl.py -I ./spec -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).ttl
+	${TOOLSDIR}/contrib/vspec2ttl/vspec2ttl.py -I ./spec -o overlays/DIMO/dimo.vspec -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).ttl
 
 id:
-	${TOOLSDIR}/vspec2id.py -I ./spec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).vspec
+	${TOOLSDIR}/vspec2id.py -I ./spec -o overlays/DIMO/dimo.vspec --uuid -u ./spec/units.yaml ./spec/VehicleSignalSpecification.vspec vss_rel_$$(cat VERSION).vspec
+
+venv:
+	@echo "Checking if virtual environment $(VENV_NAME) exists..."
+	@if [ -d "$(VENV_PATH)" ]; then \
+		echo "Virtual environment exists."; \
+		echo "Activate  With \`. $(VENV_PATH)/bin/activate\`"; \
+	else \
+		echo "Virtual environment does not exist. Creating..."; \
+		python3 -m venv $(VENV_PATH); \
+		. $(VENV_PATH)/bin/activate; \
+		pip install ${TOOLSDIR}; \
+		echo "Virtual environment created."; \
+		echo "Activate  With \`. $(VENV_PATH)/bin/activate\`"; \
+	fi
 
 clean:
 	rm -f ${TOOLSDIR}/binary/binarytool.so
