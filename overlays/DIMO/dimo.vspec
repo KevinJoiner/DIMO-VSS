@@ -10,6 +10,12 @@ Vehicle.DIMO:
   type: branch
   description: dimo specific metadata.
 
+Vehicle.DIMO.Aftermarket:
+  type: branch
+  description: holds information about the aftermarket dimo device
+#include cell.vspec Vehicle.DIMO.Aftermarket
+
+
 Vehicle.DIMO.Subject:
   type: sensor
   datatype: string

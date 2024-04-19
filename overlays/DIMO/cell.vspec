@@ -1,0 +1,19 @@
+HDOP:
+  datatype: float
+  type: sensor
+  description: Horizontal dilution of precision of GPS
+
+NSAT:
+  datatype: float
+  type: sensor
+  description: Number of sync satellites for GPS
+
+WPAState:
+  datatype: string
+  type: sensor
+  description: Indicate the current wpa state for the devices wifi
+
+SSID:
+  datatype: string
+  type: sensor
+  description: Service Set Ientifier for the wifi.
