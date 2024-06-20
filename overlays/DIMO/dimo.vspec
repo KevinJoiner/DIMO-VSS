@@ -19,13 +19,13 @@ Vehicle.DIMO.Aftermarket:
 Vehicle.DIMO.Subject:
   type: sensor
   datatype: string
-  description: subjet of this vehicle data
+  description: subject of this vehicle data
 
 Vehicle.DIMO.Timestamp:
   datatype: string
   type: sensor
   unit: iso8601
-  description: timestamp of when this data was colllected
+  description: timestamp of when this data was collected
   
 Vehicle.DIMO.Source:
   type: sensor
@@ -40,11 +40,15 @@ Vehicle.DIMO.Type:
 Vehicle.DIMO.DefinitionID:
   type: sensor
   datatype: string
-  description: ID for the vehicles definition
+  description: ID for the vehicle's definition
 
 Vehicle.DIMO.VehicleID:
   type: sensor
   datatype: string
-  description: unque DIMO ID for the vehicle
+  description: unique DIMO ID for the vehicle
 
-
+Vehicle.DIMO.IsLocationRedacted:
+  datatype: boolean
+  type: sensor
+  description: Indicates if the latitude and longitude signals at the current
+               timestamp have been redacted using a privacy zone.
