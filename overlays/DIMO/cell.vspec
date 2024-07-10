@@ -21,4 +21,3 @@ SSID:
   datatype: string
   type: sensor
   description: Service Set Identifier for the wifi.
-  
