@@ -26,7 +26,7 @@ Vehicle.DIMO.Timestamp:
   type: sensor
   unit: iso8601
   description: timestamp of when this data was collected
-  
+
 Vehicle.DIMO.Source:
   type: sensor
   datatype: string
