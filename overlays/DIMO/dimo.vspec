@@ -47,7 +47,7 @@ Vehicle.DIMO.VehicleID:
   datatype: string
   description: unique DIMO ID for the vehicle
 
-Vehicle.DIMO.IsLocationRedacted:
+Vehicle.CurrentLocation.IsLocationRedacted:
   datatype: boolean
   type: sensor
   description: Indicates if the latitude and longitude signals at the current
