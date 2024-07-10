@@ -26,7 +26,7 @@ Vehicle.DIMO.Timestamp:
   type: sensor
   unit: iso8601
   description: timestamp of when this data was collected
-  
+
 Vehicle.DIMO.Source:
   type: sensor
   datatype: string
@@ -47,8 +47,16 @@ Vehicle.DIMO.VehicleID:
   datatype: string
   description: unique DIMO ID for the vehicle
 
-Vehicle.DIMO.IsLocationRedacted:
+Vehicle.CurrentLocation.IsRedacted:
   datatype: boolean
   type: sensor
   description: Indicates if the latitude and longitude signals at the current
                timestamp have been redacted using a privacy zone.
+
+Vehicle.Powertrain.CombustionEngine.EngineOilRelativeLevel:
+  type: sensor
+  datatype: float
+  unit: percent
+  min: 0
+  max: 100
+  description: Engine oil level as a percentage.
