@@ -57,4 +57,6 @@ Vehicle.Powertrain.CombustionEngine.EngineOilRelativeLevel:
   type: sensor
   datatype: float
   unit: percent
+  min: 0
+  max: 100
   description: Engine oil level as a percentage.
