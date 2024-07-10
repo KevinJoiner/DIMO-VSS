@@ -11,9 +11,9 @@ NSAT:
 WPAState:
   datatype: string
   type: sensor
-  description: Indicate the current wpa state for the devices wifi
+  description: Indicate the current WPA state for the device's wifi
 
 SSID:
   datatype: string
   type: sensor
-  description: Service Set Ientifier for the wifi.
+  description: Service Set Identifier for the wifi.
