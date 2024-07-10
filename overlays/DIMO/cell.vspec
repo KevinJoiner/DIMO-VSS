@@ -1,3 +1,7 @@
+# cell provides fields related to dimo device's cellular signal.
+# Dependencies to other overlays: None
+# Known conflicts with other overlays: None
+#
 HDOP:
   datatype: float
   type: sensor
@@ -17,3 +21,4 @@ SSID:
   datatype: string
   type: sensor
   description: Service Set Identifier for the wifi.
+  
