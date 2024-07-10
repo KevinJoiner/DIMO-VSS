@@ -52,3 +52,9 @@ Vehicle.DIMO.IsLocationRedacted:
   type: sensor
   description: Indicates if the latitude and longitude signals at the current
                timestamp have been redacted using a privacy zone.
+
+Vehicle.Powertrain.CombustionEngine.EngineOilRelativeLevel:
+  type: sensor
+  datatype: float
+  unit: percent
+  description: Engine oil level as a percentage.
