@@ -60,3 +60,11 @@ Vehicle.Powertrain.CombustionEngine.EngineOilRelativeLevel:
   min: 0
   max: 100
   description: Engine oil level as a percentage.
+
+Vehicle.Powertrain.CombustionEngine.BoostPressureActual:
+  type: sensor
+  datatype: float
+  unit: kPa
+  min: 0
+  max: 200
+  description: Turbo pressure mesaurement.
