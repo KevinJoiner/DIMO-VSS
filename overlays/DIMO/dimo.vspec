@@ -60,3 +60,9 @@ Vehicle.Powertrain.CombustionEngine.EngineOilRelativeLevel:
   min: 0
   max: 100
   description: Engine oil level as a percentage.
+
+Vehicle.Powertrain.TractionBattery.Charging.AddedEnergy:
+  type: sensor
+  datatype: float
+  unit: kWh
+  description: Amount of charge added to the high voltage battery during the current charging session, expressed in kilowatt-hours.
