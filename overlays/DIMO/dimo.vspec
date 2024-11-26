@@ -66,3 +66,9 @@ Vehicle.Powertrain.TractionBattery.Charging.AddedEnergy:
   datatype: float
   unit: kWh
   description: Amount of charge added to the high voltage battery during the current charging session, expressed in kilowatt-hours.
+
+Vehicle.Cabin.HVAC.CompressorPWM
+  type: sensor
+  datatype: float
+  unit: percent
+  description: AC compressor controlled electrical frequency. 
