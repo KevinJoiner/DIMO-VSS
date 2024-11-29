@@ -74,4 +74,10 @@ Vehicle.Cabin.HVAC.CompressorPWM:
   min: 0
   max: 100
   description: AC compressor controlled electrical frequency. 
-  
+
+Vehicle.Cabin.HVAC.CompressorEngaged:
+  type: sensor
+  datatype: float
+  description: AC compressor magnetic clutch engaged i.e. compressor on.
+
+
