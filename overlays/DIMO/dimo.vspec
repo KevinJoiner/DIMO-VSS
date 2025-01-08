@@ -66,3 +66,73 @@ Vehicle.Powertrain.TractionBattery.Charging.AddedEnergy:
   datatype: float
   unit: kWh
   description: Amount of charge added to the high voltage battery during the current charging session, expressed in kilowatt-hours.
+
+Device.Network.GSM/UMTS.SignalLevel:
+  type: sensor
+  datatype: float
+  description: Device network signal level
+
+Device.Power.BatteryVoltage:
+  type: sensor
+  datatype: float
+  description: Device onboard battery voltage
+
+Device.ECO.BrakeCounter:
+  type: sensor
+  datatype: float
+  description: Brake event counter
+
+Device.ECO.HarshBrakeCounter:
+  type: sensor
+  datatype: float
+  description: Harsh brake event counter
+
+Device.ECO.HarshAccelerationCounter:
+  type: sensor
+  datatype: float
+  description: Harsh acceleration event counter  
+
+Device.ECO.IdlingTimer:
+  type: sensor
+  datatype: float
+  description: Length of time vehicle engine was idling since last start up
+
+Device.ECO.IdlingEvent:
+  type: sensor
+  datatype: float
+  description: Vehicle idling
+
+Device.MovementSensor:
+  type: sensor
+  datatype: float
+  description: Vehicle movement detected
+
+Device.ECO.BrakingValue:
+  type: sensor
+  datatype: float
+  description: Braking value
+
+Device.ECO.AccelerationValue:
+  type: sensor
+  datatype: float
+  description: Acceleration value
+
+Device.ECO.CorneringValue:
+  type: sensor
+  datatype: float
+  description: Cornering value
+
+Device.VehicleIgnitionStatus:
+  type: sensor
+  datatype: float
+  description: Vehicle ignition status 
+
+Device.UnplugDetection:
+  type: sensor
+  datatype: float
+  description: device unplug detection
+
+Device.Network.CurrentLTEBand:
+  type: sensor
+  datatype: float
+  description: Current LTE band
